@@ -1,0 +1,16 @@
+{
+  "server": {
+    "address": ":8080"
+  },
+  "database": {
+    "host": "127.0.0.1",
+    "port": "3306",
+    "user": "root",
+    "pass": "",
+    "name": "go_notesapp_test"
+  },
+  "jwt": {
+    "secret": "tokens4nga#raha$!asek4lL",
+    "expired": 2
+  }
+}

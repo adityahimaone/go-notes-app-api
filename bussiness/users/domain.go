@@ -15,11 +15,11 @@ type Domain struct {
 type Service interface {
 	Register(user *Domain) (*Domain, error)
 	Login(username string, password string) (string, error)
-	Edit(user *Domain) (*Domain, error)
+	Edit(user *Domain, id int) (*Domain, error)
 }
 
 type Repository interface {
 	Create(user *Domain) (*Domain, error)
-	Update(user *Domain) (*Domain, error)
+	Update(user *Domain, id int) (*Domain, error)
 	FindByUsername(username string) (*Domain, error)
 }

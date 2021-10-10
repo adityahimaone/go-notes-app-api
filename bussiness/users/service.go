@@ -45,13 +45,13 @@ func (service serviceUsers) Login(username string, password string) (string, err
 	return token, err
 }
 
-func (service serviceUsers) Edit(user *Domain) (*Domain, error) {
+func (service serviceUsers) Edit(user *Domain, id int) (*Domain, error) {
 	passwordHash, err := bcrypthelper.PasswordHash(user.Password)
 	if err != nil {
 		return &Domain{}, err
 	}
 	user.Password = passwordHash
-	result, err := service.repository.Update(user)
+	result, err := service.repository.Update(user, id)
 	if err != nil {
 		return &Domain{}, err
 	}
