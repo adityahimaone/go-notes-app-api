@@ -19,7 +19,7 @@ func NewHandler(userService users.Service) *Presenter {
 	}
 }
 
-func (handler *Presenter) Register(fiberContext fiber.Ctx) error {
+func (handler *Presenter) Register(fiberContext *fiber.Ctx) error {
 	var req request.User
 	if err := fiberContext.BodyParser(&req); err != nil {
 		response := response_tmp.APIResponse("Failed Bind", http.StatusBadRequest, "error", err)

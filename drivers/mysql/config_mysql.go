@@ -5,6 +5,7 @@ import (
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"log"
+	"todolist/drivers/mysql/users"
 )
 
 type ConfigDB struct {
@@ -32,5 +33,5 @@ func (configDB *ConfigDB) InitDB() *gorm.DB {
 }
 
 func MigrateDB(db *gorm.DB) {
-
+	db.AutoMigrate(&users.Users{})
 }
